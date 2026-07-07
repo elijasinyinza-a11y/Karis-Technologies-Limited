@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Design tokens — single source of truth (mirrored in tailwind.config.ts)
+   Do not introduce accent hues outside the cyan/teal family.
+   ============================================================ */
+:root {
+  --navy: #080f20;
+  --navy-2: #0c1730;
+  --navy-3: #122145;
+  --paper: #f6f8fb;
+  --white: #ffffff;
+  --cyan: #2ee7ff;
+  --teal: #17d6bc;
+  --blue: #3b82f6;
+  --ink: #0b1220;
+  --muted: #5b6472;
+  --line: #e4e8ef;
+  --line-navy: rgba(255, 255, 255, 0.1);
+  --glass: rgba(255, 255, 255, 0.045);
+
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(46, 231, 255, 0.25);
+}
+
+/* Signature: hero gradient text, used only on the hero headline phrase. */
+.grad-text {
+  background: linear-gradient(100deg, var(--cyan), var(--blue) 55%, var(--teal));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Soft radial cyan glow used on dark sections — subtle, not neon. */
+.glow-navy {
+  position: relative;
+  isolation: isolate;
+}
+.glow-navy::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    circle at 78% 12%,
+    rgba(46, 231, 255, 0.14),
+    transparent 62%
+  );
+  pointer-events: none;
+}
+
+/* Visible keyboard focus on every interactive element. */
+a:focus-visible,
+button:focus-visible,
+[role="tab"]:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
