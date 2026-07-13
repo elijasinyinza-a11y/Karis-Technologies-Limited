@@ -35,7 +35,7 @@ export const platforms: Platform[] = [
     description:
       "A digital twin of the utility network that cuts non-revenue water and turns operations into real-time intelligence.",
     icon: "droplet",
-    href: "/platforms#aminzi",
+    href: "/karis-mind/pricing",
   },
   {
     id: "liquidlinq",
