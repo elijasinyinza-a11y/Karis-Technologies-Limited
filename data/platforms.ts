@@ -26,7 +26,7 @@ export const platforms: Platform[] = [
     description:
       "Strategy, leadership, and organisational intelligence — unifying Karis AI, Karis Strategy™, GOLD Leadership™, and OCAM™.",
     icon: "brain",
-    href: "/platforms#mind",
+     href: "/karis-mind/pricing",
   },
   {
     id: "aminzi",
@@ -35,7 +35,7 @@ export const platforms: Platform[] = [
     description:
       "A digital twin of the utility network that cuts non-revenue water and turns operations into real-time intelligence.",
     icon: "droplet",
-    href: "/karis-mind/pricing",
+    href: "/platforms#aminzi",
   },
   {
     id: "liquidlinq",
